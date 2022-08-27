@@ -5,7 +5,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { createDrawerNavigator } from '@react-navigation/drawer';
 import {StatusBar} from 'react-native';
 import Header from './components/header';
-import { Table, TableWrapper, Row, Rows, Col, Cols, Cell } from 'react-native-table-component';
+import { Table, Row, Rows,} from 'react-native-table-component';
 import { Dimensions,Button } from 'react-native';
 
 import { SafeAreaView } from 'react-native-safe-area-context';
@@ -13,8 +13,7 @@ import { TextInput } from 'react-native-gesture-handler';
 import { Picker } from '@react-native-picker/picker';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { get } from 'react-native/Libraries/Utilities/PixelRatio';
-import { Video, AVPlaybackStatus } from 'expo-av';
+import { Video} from 'expo-av';
 
 import ImageZoom from 'react-native-image-pan-zoom';
 
@@ -98,7 +97,7 @@ text1:'शरीर द्वारा प्रत्येक अंग एव
 const item125={
 id:1,
 title:'मातृ कुपोषण के निवारण हेतु आहार सम्बन्धी पोषक तत्वों की जानकारी व अन्य स्वास्थ्य सम्बन्धी देखभाल-',
-text1:'गर्भावस्था स्त्री जीवन की एक विशेष अवस्था है गर्भवती स्त्री जो कुछ भी खाती है वह सीधे उसके बच्चे के शारीरिक व मानसिक वृद्धि पर प्रभाव डालती है। अतः परिवार जनों को गर्भवती व धात्री महिलाओं के पोषण पर विशेष ध्यान रखना चाहिये। संतुलित भोजन की थाली, सूक्ष्म पोषक तत्वों से युक्त फल, जड़ एवं हरे पत्तेदार सब्जियाॅ तथा स्वच्छ पानी का नियमित सेवन शरीर में पोषक तत्वों की पूर्ति के लिये अत्यन्त आवश्यक है। ',
+text1:'गर्भावस्था स्त्री जीवन की एक विशेष अवस्था है | गर्भवती स्त्री जो कुछ भी खाती है वह सीधे उसके बच्चे के शारीरिक व मानसिक वृद्धि पर प्रभाव डालती है। अतः परिवार जनों को गर्भवती व धात्री महिलाओं के पोषण पर विशेष ध्यान रखना चाहिये। संतुलित भोजन की थाली, सूक्ष्म पोषक तत्वों से युक्त फल, जड़ एवं हरे पत्तेदार सब्जियाॅ तथा स्वच्छ पानी का नियमित सेवन शरीर में पोषक तत्वों की पूर्ति के लिये अत्यन्त आवश्यक है। ',
 
 };
 
@@ -227,7 +226,14 @@ function Details20({navigation}){
   <Text style={styles.details}>{'\u2022 आहार के माध्यम से प्रोटीन का सेवन आवश्यक है क्योकि इसे शरीर में वसा या कार्बोहाइड्रेड की भांति सचित नही किया जा सकता।'} </Text>
   <Text style={styles.details}>{'\u2022 दूध स्त्रावण में सहायक तत्व'}</Text>
   <Text style={{fontWeight:'bold',fontSize:20}}>प्रोटीन की र्निधारित मात्रा-</Text>
-  <Image  style={ {resizeMode:'contain',height:200, width:320}}source={require('./assets/app_images/in_app/image087.png')}></Image>
+  
+  <ImageZoom cropWidth={Dimensions.get('window').width-25}
+                       cropHeight={300}
+                       imageWidth={Dimensions.get('window').width-25}
+                       imageHeight={200}>
+                <Image style={{ marginTop:20,resizeMode:'stretch',width:'100%', height:150}}
+                       source={require('./assets/app_images/in_app/image087.png')}/>
+            </ImageZoom>
   
   <Text style={{fontWeight:'bold',fontSize:20}}>गर्भवती व धात्री महिलाओं में प्रोटीन की कमी होने से समस्या एवं लक्षण -</Text>
   <Text style={styles.details}> {'\u2022 मांसपेशियों में कमजोरी  '}</Text>
@@ -260,8 +266,14 @@ function Details20({navigation}){
       <ScrollView style={styles.scrollstyle}>
   <Text style={styles.details}>विटामिन-डी जिसका रासायनिक नाम कोलकैल्सीफेरोल है यह सूर्य के प्रकाश की उपस्थिति में 1, 25-डाईहाइड्रोक्सी कोलकैल्सीफेराल में परिवर्तित होता है जो कि शरीर में हार्मोन की भांति तथा कैल्शियम एवं फास्फोरस के संचयन में सहायक होता है। विटामिन -डी गर्भवती महिलाओं में कैल्शियम के उपापचय व शिशु की हड्डी के विकास में मदद करते है। </Text>
   <Text style={{fontWeight:'bold',fontSize:20}}>विटामिन- डी की निर्धारित मात्रा-  </Text>
-  <Image  style={ {resizeMode:'contain',height:200, width:320,marginTop:15,marginBottom:15,}}source={require('./assets/app_images/in_app/image088.png')}></Image>
- 
+  
+  <ImageZoom cropWidth={Dimensions.get('window').width-25}
+                       cropHeight={300}
+                       imageWidth={Dimensions.get('window').width-25}
+                       imageHeight={200}>
+                <Image style={{ marginTop:20,resizeMode:'stretch',width:'100%', height:150}}
+                       source={require('./assets/app_images/in_app/image088.png')}/>
+            </ImageZoom>
   <Text style={{fontWeight:'bold',fontSize:20}}>गर्भवती व धात्री महिलाओं में विटामिन-डी के अभाव से उत्पन्न समस्यायें एवं लक्षण-</Text>
   <Text style={styles.details}> {'\u2022 रोग प्रतिरोधक क्षमता का कम होना     '}</Text>
   <Text style={styles.details}>{'\u2022 शिशु का कंकाल तंत्र व मानसिक स्तर कमजोर होना।  '} </Text>
@@ -299,7 +311,13 @@ function Details20({navigation}){
       
   <Text style={styles.details}>गर्भवती  एवं धात्री महिलाओं में विटामिन ए की संतुलित मात्रा दूध के उत्पादन में एवं सामान्य दृष्टि के लिये आवश्यक है। विटामिन ‘ए‘ का अभिशोेेेेेेेेेेेेेेेेेषण नवजात शिशु में काफी धीमा हो जाता है, अतः गर्भवती को , विटामिन ए युक्त प्राणिज खाद्य पदार्थो का सेवन अवश्य करना चाहिये। </Text>
   <Text style={{fontWeight:'bold',fontSize:20}}>विटामिन ‘ए‘ की निर्धारित मात्रा-  </Text>
-  <Image  style={ {resizeMode:'contain',height:200, width:320,marginTop:15,marginBottom:15,}}source={require('./assets/app_images/in_app/image089.png')}></Image>
+  <ImageZoom cropWidth={Dimensions.get('window').width-25}
+                       cropHeight={300}
+                       imageWidth={Dimensions.get('window').width-25}
+                       imageHeight={200}>
+                <Image style={{ marginTop:20,resizeMode:'stretch',width:'100%', height:150}}
+                       source={require('./assets/app_images/in_app/image089.png')}/>
+            </ImageZoom>
  
   <Text style={{fontWeight:'bold',fontSize:20}}> गर्भवती एवं धात्री महिलाओं में विटामिन ए के अभाव के कारण समस्याएं एवं लक्षण- </Text>
   <Text style={styles.details}> {'\u2022 रोग प्रतिरोधक क्षमता का कम होना'}</Text>
@@ -328,7 +346,13 @@ function Details20({navigation}){
           <ScrollView style={styles.scrollstyle}>
   <Text style={styles.details}>गर्भावस्था एवं उससे छः महीने पहले फोलिक एसिड की शरीर में कमी बच्चे के मस्तिष्क तथा रीढ़- हड्डी के पूर्ण विकास को प्रभावित करती है | अतः गर्भवती को हरे-पत्तेदार सब्जियाॅ, खट्टे फल जैसे- नींबू अथवा मौसमी एवं सभी प्रकार की दाल, मेवे जैसे- काजू, पिस्ता, बादाम इत्यादि का सेवन अवश्य करना चाहिये। </Text>
   <Text style={{fontWeight:'bold',fontSize:20}}>फोलिक एसिड की निर्धारित मात्रा-  </Text>
-  <Image  style={ {resizeMode:'contain',height:200, width:320,marginTop:15,marginBottom:15,}}source={require('./assets/app_images/in_app/image090.png')}></Image>
+  <ImageZoom cropWidth={Dimensions.get('window').width-25}
+                       cropHeight={300}
+                       imageWidth={Dimensions.get('window').width-25}
+                       imageHeight={200}>
+                <Image style={{ marginTop:20,resizeMode:'stretch',width:'100%', height:150}}
+                       source={require('./assets/app_images/in_app/image090.png')}/>
+            </ImageZoom>
  
 <Text style={{fontWeight:'bold',fontSize:20}}>गर्भवती एवं धात्री महिलाओं में फोलिक एसिड की कमी के कारण उत्पन्न समस्यायें एवं लक्षण-  </Text>
 
@@ -374,8 +398,13 @@ function Details20({navigation}){
 
 
   <Text style={{fontWeight:'bold',fontSize:20}}>विटामिन बी-12 की निर्धारित मात्रा- </Text>
-  <Image  style={ {resizeMode:'contain',height:200, width:320,marginTop:15,marginBottom:15,}}source={require('./assets/app_images/in_app/image091.png')}></Image>
- 
+  <ImageZoom cropWidth={Dimensions.get('window').width-25}
+                       cropHeight={300}
+                       imageWidth={Dimensions.get('window').width-25}
+                       imageHeight={200}>
+                <Image style={{ marginTop:20,resizeMode:'stretch',width:'100%', height:150}}
+                       source={require('./assets/app_images/in_app/image091.png')}/>
+            </ImageZoom>
   <Text style={{fontWeight:'bold',fontSize:20}}>गर्भवती व धात्री महिलाओं में विटामिन बी-12 के अभाव व कमी से उत्पन्न लक्षण एवं शारीरिक समस्यायें- </Text>
   <Text style={styles.details}> {'\u2022 मेगैलोब्लास्टिक एनीमिया  '}</Text>
   <Text style={styles.details}>{'\u2022 कमजोेेेेेेेेेेेेेेेेेेरी एवं जी मिचलाना  '} </Text>
@@ -426,8 +455,13 @@ function Details20({navigation}){
                 <ScrollView style={styles.scrollstyle}>
              
   <Text style={styles.details}>शिशु की रोग प्रतिरोधक क्षमता तथा डी.एन.ए. विश्लेषण हेतु जिंक की पर्याप्त मात्रा होना आवश्यक है ।  यदि जिंक की कमी गर्भवती स्त्री के शरीर में है तो गर्भ में शिशु के विकास में अवरोध अत्पन्न होता है। जिंक को प्राकृतिक रुप से दालो ,अण्डों, सूखे मेवे व बीज से प्राप्त कर सकते है।  </Text>
-  <Image  style={ {resizeMode:'contain',height:200, width:320,marginTop:15,marginBottom:15,}}source={require('./assets/app_images/in_app/image093.png')}></Image>
-  <Image  style={ {resizeMode:'contain',height:200, width:320,marginTop:15,marginBottom:15,}}source={require('./assets/app_images/in_app/image072.jpg')}></Image>
+  <ImageZoom cropWidth={Dimensions.get('window').width-25}
+                       cropHeight={300}
+                       imageWidth={Dimensions.get('window').width-25}
+                       imageHeight={200}>
+                <Image style={{ marginTop:20,resizeMode:'stretch',width:'100%', height:150}}
+                       source={require('./assets/app_images/in_app/image093.png')}/>
+            </ImageZoom><Image  style={ {resizeMode:'contain',height:200, width:320,marginTop:15,marginBottom:15,}}source={require('./assets/app_images/in_app/image072.jpg')}></Image>
  
               
               </ScrollView>
@@ -445,8 +479,13 @@ function Details20({navigation}){
                   <ScrollView style={styles.scrollstyle}>
                
   <Text style={styles.details}>कैल्शियम की कमी जो कि प्रायः विटामिन डी की कमी या फास्फोरस के सामान्य क्रियान्वयन न होने के कारण सामान्य जनसंख्या व गर्भवती में पायी जाती है। जिसके कारण शिशु की हड्डियाॅ एवं दांतो का विकास प्रभावित तथा गर्भवती हाइपरटेंशन एवं पूर्व डिलवरी का शिकार हो सकती है। </Text>
-  <Image  style={ {resizeMode:'contain',height:200, width:320,marginTop:15,marginBottom:15,}}source={require('./assets/app_images/in_app/image095.png')}></Image>
- 
+  <ImageZoom cropWidth={Dimensions.get('window').width-25}
+                       cropHeight={300}
+                       imageWidth={Dimensions.get('window').width-25}
+                       imageHeight={200}>
+                <Image style={{ marginTop:20,resizeMode:'stretch',width:'100%', height:150}}
+                       source={require('./assets/app_images/in_app/image095.png')}/>
+            </ImageZoom>
   <Text style={styles.details}> मुख्य रुप से ये  रागी, बाजरा, करी पत्ता, दुग्ध व दुग्ध उत्पाद, सूखे मेवे, मशरुम, फलियाॅ इत्यादि में पाये जाते है। गर्भवती एवं धात्री महिलायें प्रतिदिन शिशु के साथ 35-45 मिनट धूप में अवश्य बैठे।</Text>
   <Image  style={ {resizeMode:'contain',height:200, width:320,marginTop:15,marginBottom:15,}}source={require('./assets/app_images/in_app/image073.jpg')}></Image>
  
@@ -464,8 +503,13 @@ function Details20({navigation}){
                     
                     <ScrollView style={styles.scrollstyle}>
                     <Text style={styles.details}>मैग्नीशियम की पूर्ति गर्भवती को निम्न समस्याओं जैसे- बदन दर्द, उल्टी, मिचली, भूख न लगना, थकान इत्यादि से निजात दिलाती है। प्राकृतिक रुप से हरी पत्तेदार सब्जियाॅ, सोयाबीन, सूखे मेवे, मशरुम, दुग्ध उत्पाद, मूंगफली से बना मक्खन, मैग्नीशियम की पूर्ति में सहायक है।  </Text>
-                    <Image  style={ {resizeMode:'contain',height:200, width:320,marginTop:15,marginBottom:15,}}source={require('./assets/app_images/in_app/image096.png')}></Image>
- 
+                    <ImageZoom cropWidth={Dimensions.get('window').width-25}
+                       cropHeight={300}
+                       imageWidth={Dimensions.get('window').width-25}
+                       imageHeight={200}>
+                <Image style={{ marginTop:20,resizeMode:'stretch',width:'100%', height:150}}
+                       source={require('./assets/app_images/in_app/image096.png')}/>
+            </ImageZoom>
                     <Image  style={ {resizeMode:'contain',height:200, width:320,marginTop:15,marginBottom:15,}}source={require('./assets/app_images/in_app/image074.jpg')}></Image>
  
                   </ScrollView>
@@ -481,8 +525,14 @@ function Details20({navigation}){
                       
                       <ScrollView style={styles.scrollstyle}>
                       <Text style={styles.details}>शिशु के मस्तिष्क विकास तथा पाचन-प्रणाली के सामान्य क्रियान्वयन के लिये आयोडीन आवश्यक है साथ ही साथ गर्भवती में थायराइड हार्मोन्स के संतुलन को बनाये रखने के लिये भी जरुरी है। शरीर में थायराइड हार्मोन्स की कमी के कारण बच्चा मरा हुआ, गर्भपात या समय से पूर्व डिलवरी का खतरा होता है। आयोडीन की पूर्ति हेतु नमक की निर्धारित मात्रा के साथ बेरी जैसे- आंवला, दुग्ध व दुग्ध उत्पाद तथा समुद्री भोजन जैसे- मछली, झींगा, सूखे मेवे व बीज का सेवन कर सकते है।</Text>
-                      <Image  style={ {resizeMode:'contain',height:200, width:320,marginTop:15,marginBottom:15,}}source={require('./assets/app_images/in_app/image097.png')}></Image>
-                      <Image  style={ {resizeMode:'contain',height:200, width:320,marginTop:15,marginBottom:15,}}source={require('./assets/app_images/in_app/image075.jpg')}></Image>
+                      <ImageZoom cropWidth={Dimensions.get('window').width-25}
+                       cropHeight={300}
+                       imageWidth={Dimensions.get('window').width-25}
+                       imageHeight={200}>
+                <Image style={{ marginTop:20,resizeMode:'stretch',width:'100%', height:150}}
+                       source={require('./assets/app_images/in_app/image097.png')}/>
+            </ImageZoom> 
+            <Image  style={ {resizeMode:'contain',height:200, width:320,marginTop:15,marginBottom:15,}}source={require('./assets/app_images/in_app/image075.jpg')}></Image>
  
  
                     
@@ -498,7 +548,13 @@ function Details20({navigation}){
                         
                         <ScrollView style={styles.scrollstyle}>
                         <Text style={styles.details}>लौह तत्व जो कि गर्भवती के लिये सर्वाधिक महत्वपूर्ण पोषक तत्व है जिसके कमी से रक्ताल्पता, थकान, उल्टी मिचली, वजन कम होना व बुखार इत्यादि समस्यायें गर्भावस्था के दौरान बनी रहती है अतः इसकी पूर्ति हेतु हरी-पत्तेदार सब्जियाॅ, दाले, फलियाॅ,  गुड़-चना, सत्तू, खट्टेफल, अनार-मौसम्मी इत्यादि का नियमित सेवन करे </Text>
-                        <Image  style={ {resizeMode:'contain',height:200, width:320,marginTop:15,marginBottom:15,}}source={require('./assets/app_images/in_app/image098.png')}></Image>
+                        <ImageZoom cropWidth={Dimensions.get('window').width-25}
+                       cropHeight={300}
+                       imageWidth={Dimensions.get('window').width-25}
+                       imageHeight={200}>
+                <Image style={{ marginTop:20,resizeMode:'stretch',width:'100%', height:150}}
+                       source={require('./assets/app_images/in_app/image098.png')}/>
+            </ImageZoom>
                         <Image  style={ {resizeMode:'contain',height:200, width:320,marginTop:15,marginBottom:15,}}source={require('./assets/app_images/in_app/image076.jpg')}></Image>
  
 
@@ -1102,8 +1158,7 @@ function Details12({navigation}){
   return(
   <View style={styles.details}>
     
-    <ScrollView style={styles.scrollstyle}>
-
+   
       <FlatList data={item} renderItem={({item})=>
     <TouchableOpacity style={styles.details_foo_1} onPress={()=>navigation.navigate(item.fn,{
       text:item.text
@@ -1115,8 +1170,7 @@ function Details12({navigation}){
     </TouchableOpacity>
 }/>
    
-   </ScrollView>
-  </View>
+    </View>
   );
   }
   
@@ -1139,7 +1193,7 @@ function Details31({navigation}){
 
      <Text  style={styles.details}>जैसा कि सर्ववदित है कि मनुष्य को शारीरिक कार्य करने एवं जीवनयापन करने हेतु ऊर्जा मुख्य हैं। पृथ्वी पर पौधों एवं मनुष्य की ऊर्जा का मुख्य स्त्रोत सूर्य है एवं गर्भ मे शिशु के विकास हेतु निर्धारित मात्रा के अतिरिक्त ऊर्जा की आवश्यकता होती है जो कि निम्नलिखित है।
      </Text ><Text style={{fontSize:24,fontWeight:'bold'}}> गर्भवती हेतु निर्धारित ऊर्जा की मात्रा :</Text>
-         <Text style={styles.details}> सामान्य महिला हेतु निर्धारित सामान्य वजन 55 किग्रा है एवं 2130 कि0 कैलोरी की आवश्यकता होती है। गर्भावस्था मे निर्धारित वजन 65 किग्रा एवं  2165 कि0 कैलोरी की आवश्यकता होती है। इसी प्रकार स्तनपान करने वाली महिलाओं को 0 से 6 माह तक 2730 कि0 कैलोरी एवं 6 से 12 माह मे 2650 कि0 कैलोरी की आवश्यकता होती है। अतरू निर्धारित मात्रा के अनुसार महिलाओं को अपने भोजन मे स्टार्च एवं कार्बोहाइड्रेट का भलीभांति चयन करना चाहिये ताकि स्वयं एवं शिशु का सर्वागींण विकास हो सके।
+         <Text style={styles.details}> सामान्य महिला हेतु निर्धारित सामान्य वजन 55 किग्रा है एवं 2130 कि0 कैलोरी की आवश्यकता होती है। गर्भावस्था मे निर्धारित वजन 65 किग्रा एवं  2165 कि0 कैलोरी की आवश्यकता होती है। इसी प्रकार स्तनपान करने वाली महिलाओं को 0 से 6 माह तक 2730 कि0 कैलोरी एवं 6 से 12 माह मे 2650 कि0 कैलोरी की आवश्यकता होती है। अत: निर्धारित मात्रा के अनुसार महिलाओं को अपने भोजन मे स्टार्च एवं कार्बोहाइड्रेट का भलीभांति चयन करना चाहिये ताकि स्वयं एवं शिशु का सर्वागींण विकास हो सके।
          </Text>
          <Text style={{fontSize:24,fontWeight:'bold' ,paddingBottom:15} }> ऊर्जा के मुख्य स्त्रोत :
 </Text>
@@ -1173,7 +1227,6 @@ function LandingPage({navigation}){
     try {
       const value = await AsyncStorage.getItem('@storage_Key')
       if(value !== null) {
-        console.log(value)
         setModalVisible(false);
       }
         
@@ -1229,9 +1282,9 @@ return response.json();
     await AsyncStorage.setItem('@storage_Key', value)
   } catch (e) {
 
-    console.log('failed')    // saving error
+        // saving error
   }
-  console.log('sucsess')
+ 
 }
 storeData(name);
 
@@ -1362,17 +1415,14 @@ storeData(name);
 
 function First_page({navigation}){
  
- 
- 
-
- 
+  
   return(
 
 
     <SafeAreaView style={styles.f_container}>
 
     <Image style={{resizeMode:'cover',height:Dimensions.get('window').height/4+155,width:Dimensions.get('window').width,}} source={require('./assets/app_images/main_img.jpg')}></Image>
-    <Image style={{resizeMode:'cover',height:Dimensions.get('window').height/4+110,width:Dimensions.get('window').width-5,paddingTop:5}} source={require('./assets/app_images/main_2.jpeg')}></Image>
+    <Image style={{resizeMode:'cover',height:Dimensions.get('window').height/4+140,width:Dimensions.get('window').width-5,paddingTop:5}} source={require('./assets/app_images/main_4.png')}></Image>
    
     <TouchableOpacity style={{backgroundColor:'#fc0362',height:80,alignItems:'center',justifyContent:'center'}} onPress={()=>navigation.navigate("Root")}>
       <View>
