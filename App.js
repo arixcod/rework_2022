@@ -659,7 +659,7 @@ return (
   <View style={styles.containe_table}>
     <ScrollView>
     <Table borderStyle={{borderWidth: 2, borderColor: 'black'}}>
-      <Row data={state.HeadTable} style={styles.HeadStyle} textStyle={styles.TableText}/>
+      <Row data={state.HeadTable} style={styles.HeadStyle} />
       <Rows data={state.DataTable} textStyle={styles.TableText}/>
     </Table>
     </ScrollView>

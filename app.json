@@ -2,7 +2,7 @@
   "expo": {
     "name": "मातृत्व पोषण",
     "slug": "rework",
-    "version": "1.0.2",
+    "version": "1.0.5",
     "orientation": "portrait",
     "icon": "./assets/main_img.png",
     
@@ -17,7 +17,7 @@
     },
     "android": {
       "package": "com.arixpower.rework",
-      "versionCode": 3,
+      "versionCode": 6,
 
       "adaptiveIcon": {
         "foregroundImage": "./assets/main_img.png",
